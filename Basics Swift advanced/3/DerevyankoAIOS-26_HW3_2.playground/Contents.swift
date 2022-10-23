@@ -2,8 +2,8 @@ enum Color: CaseIterable {
     case black, white, blue, red, yellow, purple
 }
 
-enum AccessoriesList: CaseIterable {
-    case Tinting, Alarm, wheels
+enum AccessoriesList: String, CaseIterable {
+    case Tinting, Alarm, Wheels
 }
 var accessories = [AccessoriesList.allCases]
 
@@ -16,6 +16,7 @@ enum AudiList: CaseIterable {
 enum PorscheList: CaseIterable {
     case Taycan, Panamera, Boxter
 }
+
 // Часть 1
 protocol Car {
     var model: String { get }
@@ -161,14 +162,14 @@ class BmwAutoHouse: Dealership {
     var stockCars: [Car] = [bmw1]
     var showroomCars: [Car] = [bmw2]
     var cars: [Car] = []
-    var tagline: String = "Freude am Fahren"
-
-    init() {
+    init () {
         self.cars = showroomCars + stockCars
     }
+    var tagline: String = "Freude am Fahren"
+
 
     func offerAccesories(nameOfAccessories: [String]) {
-        print(nameOfAccessories)
+        print("you can buy the following accessories\(nameOfAccessories)")
     }
     func presaleService(name: Car) {
             for i in stockCars.indices {
@@ -188,10 +189,15 @@ class BmwAutoHouse: Dealership {
         stockCars.removeAll { $0.vin == name.vin }
         showroomCars.append(name)
         print("\(name.model) VIN code: \(name.vin) added to car dealership")
+        presaleService(name: name)
         cars = showroomCars + stockCars
     }
     func sellCar(name: Car) {
-
+        showroomCars.removeAll { $0.vin == name.vin }
+        if name.isServiced == false {
+            presaleService(name: name)
+        }
+        print("Car \(name.model) VIN code: \(name.vin) sold")
     }
     func orderCar() {
 
@@ -199,9 +205,10 @@ class BmwAutoHouse: Dealership {
 }
 var bmwAutoHouse = BmwAutoHouse()
 
-bmwAutoHouse.addToShowroom(name: audi1)
+bmwAutoHouse.addToShowroom(name: bmw4)
+bmwAutoHouse.sellCar(name: bmw2)
+bmw2
 
-bmwAutoHouse.presaleService(name: bmw2)
 class BmwAvilon: Dealership {
     var name: String = "BMW Avilon"
     var showroomCapacity: Int = 8
@@ -317,7 +324,7 @@ class PorscheAvilon: Dealership {
 
     }
 }
-BmwAutoHouse().showroomCars
+
 //  Пункт 3
 var dealers: [Dealership] = [BmwAutoHouse(), BmwAvilon(), AudiCenter(), AudiAvilon(), PorscheAvilon()]
 
