@@ -3,7 +3,7 @@ enum Color: CaseIterable {
 }
 
 enum AccessoriesList: String, CaseIterable {
-    case Tinting, Alarm, Wheels, AidKit
+    case Tinting, Alarm, Wheels, AidKit, Extinguisher
 }
 var accessories = AccessoriesList.allCases
 
@@ -22,8 +22,8 @@ protocol Car {
     var model: String { get }
     var color: Color { get }
     var buildDate: String { get } // Дата выпуска
-    var price: Int { get set }
-    var accessories: [String] { get set }
+    var price: Double { get set }
+    var accessories: [AccessoriesList] { get set }
     var isServiced: Bool { get set } // Сделана ли предпродажная подготовка
     var vin: String { get set }
 }
@@ -53,9 +53,9 @@ protocol Dealership {
 struct Bmw1: Car {
     var model: String = "BMW \(BmwList.Three)"
     var color: Color = Color.white
-    var buildDate: String = "10 january 2022"
-    var price: Int = 80000
-    var accessories: [String] = []
+    var buildDate: String = "10 january 2020"
+    var price: Double = 80000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "B8899WE76548131"
 }
@@ -65,8 +65,8 @@ struct Bmw2: Car {
     var model: String = "BMW \(BmwList.Seven)"
     var color: Color = Color.blue
     var buildDate: String = "12 january 2022"
-    var price: Int = 198000
-    var accessories: [String] = []
+    var price: Double = 198000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = false
     var vin: String = "B8899WE76548132"
 }
@@ -76,8 +76,8 @@ struct Bmw3: Car {
     var model: String = "BMW \(BmwList.Three)"
     var color: Color = Color.white
     var buildDate: String = "10 january 2022"
-    var price: Int = 80000
-    var accessories: [String] = []
+    var price: Double = 80000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "B8899WE76548133"
 }
@@ -87,8 +87,8 @@ struct Bmw4: Car {
     var model: String = "BMW \(BmwList.Seven)"
     var color: Color = Color.blue
     var buildDate: String = "12 january 2022"
-    var price: Int = 198000
-    var accessories: [String] = []
+    var price: Double = 198000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = false
     var vin: String = "B8899WE76548134"
 }
@@ -98,8 +98,8 @@ struct Bmw5: Car {
     var model: String = "BMW \(BmwList.Five)"
     var color: Color = Color.blue
     var buildDate: String = "12 december 2021"
-    var price: Int = 112000
-    var accessories: [String] = []
+    var price: Double = 112000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = false
     var vin: String = "B8899WE76548135"
 }
@@ -109,8 +109,8 @@ struct Bmw6: Car {
     var model: String = "BMW \(BmwList.Four)"
     var color: Color = Color.yellow
     var buildDate: String = "12 december 2021"
-    var price: Int = 106000
-    var accessories: [String] = []
+    var price: Double = 106000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = false
     var vin: String = "B8899WE76548136"
 }
@@ -120,8 +120,8 @@ struct Bmw7: Car {
     var model: String = "BMW \(BmwList.Four)"
     var color: Color = Color.yellow
     var buildDate: String = "12 december 2021"
-    var price: Int = 104000
-    var accessories: [String] = []
+    var price: Double = 104000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "B8899WE76548137"
 }
@@ -131,8 +131,8 @@ struct Bmw8: Car {
     var model: String = "BMW \(BmwList.Four)"
     var color: Color = Color.yellow
     var buildDate: String = "12 december 2021"
-    var price: Int = 110000
-    var accessories: [String] = []
+    var price: Double = 110000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = false
     var vin: String = "B8899WE76548138"
 }
@@ -142,8 +142,8 @@ struct Audi1: Car {
     var model: String = "Audi \(AudiList.A6)"
     var color: Color = Color.black
     var buildDate: String = "16 january 2022"
-    var price: Int = 120000
-    var accessories: [String] = []
+    var price: Double = 120000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "A8899WE76548131"
 }
@@ -152,9 +152,9 @@ var audi1 = Audi1()
 struct Audi2: Car {
     var model: String = "Audi \(AudiList.A8)"
     var color: Color = Color.black
-    var buildDate: String = "20 january 2022"
-    var price: Int = 205000
-    var accessories: [String] = []
+    var buildDate: String = "20 january 2021"
+    var price: Double = 205000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "A8899WE76548132"
 }
@@ -164,8 +164,8 @@ struct Audi3: Car {
     var model: String = "Audi \(AudiList.A6)"
     var color: Color = Color.black
     var buildDate: String = "16 january 2022"
-    var price: Int = 120000
-    var accessories: [String] = []
+    var price: Double = 120000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "A8899WE76548133"
 }
@@ -175,8 +175,8 @@ struct Audi4: Car {
     var model: String = "Audi \(AudiList.A8)"
     var color: Color = Color.black
     var buildDate: String = "20 january 2022"
-    var price: Int = 205000
-    var accessories: [String] = []
+    var price: Double = 205000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "A8899WE76548134"
 }
@@ -186,8 +186,8 @@ struct Audi5: Car {
     var model: String = "Audi \(AudiList.A6)"
     var color: Color = Color.black
     var buildDate: String = "20 march 2021"
-    var price: Int = 123000
-    var accessories: [String] = []
+    var price: Double = 123000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "A8899WE76548135"
 }
@@ -197,8 +197,8 @@ struct Audi6: Car {
     var model: String = "Audi \(AudiList.A6)"
     var color: Color = Color.black
     var buildDate: String = "20 april 2021"
-    var price: Int = 123000
-    var accessories: [String] = []
+    var price: Double = 123000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "A8899WE76548136"
 }
@@ -208,8 +208,8 @@ struct Audi7: Car {
     var model: String = "Audi \(AudiList.A7)"
     var color: Color = Color.black
     var buildDate: String = "20 april 2021"
-    var price: Int = 129000
-    var accessories: [String] = []
+    var price: Double = 129000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "A8899WE76548137"
 }
@@ -219,8 +219,8 @@ struct Audi8: Car {
     var model: String = "Audi \(AudiList.A8)"
     var color: Color = Color.black
     var buildDate: String = "20 september 2021"
-    var price: Int = 205000
-    var accessories: [String] = []
+    var price: Double = 205000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "A8899WE76548138"
 }
@@ -230,8 +230,8 @@ struct Porsche1: Car {
     var model: String = "Porsche \(PorscheList.Taycan)"
     var color: Color = Color.purple
     var buildDate: String = "10 january 2022"
-    var price: Int = 223000
-    var accessories: [String] = []
+    var price: Double = 223000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = false
     var vin: String = "P8899WE76548131"
 }
@@ -241,8 +241,8 @@ struct Porsche2: Car {
     var model: String = "Porsche \(PorscheList.Boxter)"
     var color: Color = Color.red
     var buildDate: String = "11 january 2022"
-    var price: Int = 98000
-    var accessories: [String] = []
+    var price: Double = 98000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = false
     var vin: String = "P8899WE76548132"
 }
@@ -252,8 +252,8 @@ struct Porsche3: Car {
     var model: String = "Porsche \(PorscheList.Boxter)"
     var color: Color = Color.red
     var buildDate: String = "11 january 2022"
-    var price: Int = 98000
-    var accessories: [String] = []
+    var price: Double = 98000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = true
     var vin: String = "P8899WE76548133"
 }
@@ -263,8 +263,8 @@ struct Porsche4: Car {
     var model: String = "Porsche \(PorscheList.Boxter)"
     var color: Color = Color.red
     var buildDate: String = "11 january 2021"
-    var price: Int = 98000
-    var accessories: [String] = []
+    var price: Double = 98000
+    var accessories: [AccessoriesList] = []
     var isServiced: Bool = false
     var vin: String = "P8899WE76548134"
 }
@@ -307,19 +307,24 @@ class BmwAutoHouse: Dealership {
                     showroomCars[index].isServiced = true
                 }
             }
+        print("Pre-sale preparation for the car \(name.model) VIN code: \(name.vin)")
     }
         
     func addToShowroom(name: Car) {
         stockCars.removeAll { $0.vin == name.vin }
         showroomCars.append(name)
         print("\(name.model) VIN code: \(name.vin) added to car dealership")
-        presaleService(name: name)
-    }
-    func sellCar(name: Car) {
-        showroomCars.removeAll { $0.vin == name.vin }
         if name.isServiced == false {
             presaleService(name: name)
         }
+    }
+    func sellCar(name: Car) {
+        for i in showroomCars.indices {
+            if showroomCars[i].isServiced == false {
+                presaleService(name: showroomCars[i])
+            }
+        }
+        showroomCars.removeAll { $0.vin == name.vin }
         if name.accessories.isEmpty {
             offerAccesories(nameOfAccessories: accessories)
         }
@@ -327,16 +332,53 @@ class BmwAutoHouse: Dealership {
     }
     func orderCar() {
         stockCars.append(carsInTheWarehouseBmw1[Int.random(in: 0..<carsInTheWarehouseBmw1.count)])
+
+    }
+}
+
+extension BmwAutoHouse: SpecialOffer {
+    func addEmergencyPack() {
+        for index in stockCars.indices {
+            stockCars[index].accessories.append(AccessoriesList.AidKit)
+            stockCars[index].accessories.append(AccessoriesList.Extinguisher)
+               }
+        for i in showroomCars.indices {
+            showroomCars[i].accessories.append(AccessoriesList.AidKit)
+            showroomCars[i].accessories.append(AccessoriesList.Extinguisher)
+        }
+    }
+    func makeSpecialOffer() {
+            for i in showroomCars.indices {
+                if showroomCars[i].buildDate.contains("2022") {
+                    
+                } else {
+                    showroomCars[i].price = showroomCars[i].price * 0.85
+                }
+            }
+            for index in stockCars.indices {
+                if stockCars[index].buildDate.contains("2022") {
+                    
+                } else {
+                    stockCars[index].price = stockCars[index].price * 0.85
+                }
+            }
     }
 }
 
 var bmwAutoHouse = BmwAutoHouse()
+bmwAutoHouse.offerAccesories(nameOfAccessories: accessories)
+bmwAutoHouse.presaleService(name: bmw2)
+bmwAutoHouse.addToShowroom(name: bmw1)
+bmwAutoHouse.sellCar(name: bmw2)
+bmwAutoHouse.orderCar()
+bmwAutoHouse.addEmergencyPack()
+bmwAutoHouse.makeSpecialOffer()
 
 class BmwAvilon: Dealership {
     var name: String = "BMW Avilon"
     var showroomCapacity: Int = 8
-    var stockCars: [Car] = [Bmw3()]
-    var showroomCars: [Car] = [Bmw4()]
+    var stockCars: [Car] = [bmw3]
+    var showroomCars: [Car] = [bmw4]
     var cars: [Car] {
         get {
             stockCars + showroomCars
@@ -362,19 +404,24 @@ class BmwAvilon: Dealership {
                     showroomCars[index].isServiced = true
                 }
             }
+        print("Pre-sale preparation for the car \(name.model) VIN code: \(name.vin)")
     }
         
     func addToShowroom(name: Car) {
         stockCars.removeAll { $0.vin == name.vin }
         showroomCars.append(name)
         print("\(name.model) VIN code: \(name.vin) added to car dealership")
-        presaleService(name: name)
-    }
-    func sellCar(name: Car) {
-        showroomCars.removeAll { $0.vin == name.vin }
         if name.isServiced == false {
             presaleService(name: name)
         }
+    }
+    func sellCar(name: Car) {
+        for i in showroomCars.indices {
+            if showroomCars[i].isServiced == false {
+                presaleService(name: showroomCars[i])
+            }
+        }
+        showroomCars.removeAll { $0.vin == name.vin }
         if name.accessories.isEmpty {
             offerAccesories(nameOfAccessories: accessories)
         }
@@ -382,16 +429,45 @@ class BmwAvilon: Dealership {
     }
     func orderCar() {
         stockCars.append(carsInTheWarehouseBmw1[Int.random(in: 0..<carsInTheWarehouseBmw1.count)])
+
     }
 }
 
+extension BmwAvilon: SpecialOffer {
+    func addEmergencyPack() {
+        for index in stockCars.indices {
+            stockCars[index].accessories.append(AccessoriesList.AidKit)
+            stockCars[index].accessories.append(AccessoriesList.Extinguisher)
+               }
+        for i in showroomCars.indices {
+            showroomCars[i].accessories.append(AccessoriesList.AidKit)
+            showroomCars[i].accessories.append(AccessoriesList.Extinguisher)
+        }
+    }
+    func makeSpecialOffer() {
+            for i in showroomCars.indices {
+                if showroomCars[i].buildDate.contains("2022") {
+                    
+                } else {
+                    showroomCars[i].price = showroomCars[i].price * 0.85
+                }
+            }
+            for index in stockCars.indices {
+                if stockCars[index].buildDate.contains("2022") {
+                    
+                } else {
+                    stockCars[index].price = stockCars[index].price * 0.85
+                }
+            }
+    }
+}
 var bmwAvilon = BmwAvilon()
 
 class AudiCenter: Dealership {
     var name: String = "Audi Center"
     var showroomCapacity: Int = 8
-    var stockCars: [Car] = [Audi1()]
-    var showroomCars: [Car] = [Audi2()]
+    var stockCars: [Car] = [audi1]
+    var showroomCars: [Car] = [audi2]
     var cars: [Car] {
         get {
             stockCars + showroomCars
@@ -416,19 +492,24 @@ class AudiCenter: Dealership {
                     showroomCars[index].isServiced = true
                 }
             }
+        print("Pre-sale preparation for the car \(name.model) VIN code: \(name.vin)")
     }
         
     func addToShowroom(name: Car) {
         stockCars.removeAll { $0.vin == name.vin }
         showroomCars.append(name)
         print("\(name.model) VIN code: \(name.vin) added to car dealership")
-        presaleService(name: name)
-    }
-    func sellCar(name: Car) {
-        showroomCars.removeAll { $0.vin == name.vin }
         if name.isServiced == false {
             presaleService(name: name)
         }
+    }
+    func sellCar(name: Car) {
+        for i in showroomCars.indices {
+            if showroomCars[i].isServiced == false {
+                presaleService(name: showroomCars[i])
+            }
+        }
+        showroomCars.removeAll { $0.vin == name.vin }
         if name.accessories.isEmpty {
             offerAccesories(nameOfAccessories: accessories)
         }
@@ -436,16 +517,45 @@ class AudiCenter: Dealership {
     }
     func orderCar() {
         stockCars.append(carsInTheWarehouseBmw1[Int.random(in: 0..<carsInTheWarehouseBmw1.count)])
+
     }
 }
 
+extension AudiCenter: SpecialOffer {
+    func addEmergencyPack() {
+        for index in stockCars.indices {
+            stockCars[index].accessories.append(AccessoriesList.AidKit)
+            stockCars[index].accessories.append(AccessoriesList.Extinguisher)
+               }
+        for i in showroomCars.indices {
+            showroomCars[i].accessories.append(AccessoriesList.AidKit)
+            showroomCars[i].accessories.append(AccessoriesList.Extinguisher)
+        }
+    }
+    func makeSpecialOffer() {
+            for i in showroomCars.indices {
+                if showroomCars[i].buildDate.contains("2022") {
+                    
+                } else {
+                    showroomCars[i].price = showroomCars[i].price * 0.85
+                }
+            }
+            for index in stockCars.indices {
+                if stockCars[index].buildDate.contains("2022") {
+                    
+                } else {
+                    stockCars[index].price = stockCars[index].price * 0.85
+                }
+            }
+    }
+}
 var audiCenter = AudiCenter()
 
 class AudiAvilon: Dealership {
     var name: String = "Audi Avilon"
     var showroomCapacity: Int = 9
-    var stockCars: [Car] = [Audi3()]
-    var showroomCars: [Car] = [Audi4()]
+    var stockCars: [Car] = [audi3]
+    var showroomCars: [Car] = [audi4]
     var cars: [Car] {
         get {
             stockCars + showroomCars
@@ -470,19 +580,24 @@ class AudiAvilon: Dealership {
                     showroomCars[index].isServiced = true
                 }
             }
+        print("Pre-sale preparation for the car \(name.model) VIN code: \(name.vin)")
     }
         
     func addToShowroom(name: Car) {
         stockCars.removeAll { $0.vin == name.vin }
         showroomCars.append(name)
         print("\(name.model) VIN code: \(name.vin) added to car dealership")
-        presaleService(name: name)
-    }
-    func sellCar(name: Car) {
-        showroomCars.removeAll { $0.vin == name.vin }
         if name.isServiced == false {
             presaleService(name: name)
         }
+    }
+    func sellCar(name: Car) {
+        for i in showroomCars.indices {
+            if showroomCars[i].isServiced == false {
+                presaleService(name: showroomCars[i])
+            }
+        }
+        showroomCars.removeAll { $0.vin == name.vin }
         if name.accessories.isEmpty {
             offerAccesories(nameOfAccessories: accessories)
         }
@@ -490,6 +605,7 @@ class AudiAvilon: Dealership {
     }
     func orderCar() {
         stockCars.append(carsInTheWarehouseBmw1[Int.random(in: 0..<carsInTheWarehouseBmw1.count)])
+
     }
 }
 var audiAvilon = AudiAvilon()
@@ -497,8 +613,8 @@ var audiAvilon = AudiAvilon()
 class PorscheAvilon: Dealership {
     var name: String = "Porsche Avilon"
     var showroomCapacity: Int = 6
-    var stockCars: [Car] = [Porsche1()]
-    var showroomCars: [Car] = [Porsche2()]
+    var stockCars: [Car] = [porsche1]
+    var showroomCars: [Car] = [porsche2]
     var cars: [Car] {
         get {
             stockCars + showroomCars
@@ -523,19 +639,24 @@ class PorscheAvilon: Dealership {
                     showroomCars[index].isServiced = true
                 }
             }
+        print("Pre-sale preparation for the car \(name.model) VIN code: \(name.vin)")
     }
         
     func addToShowroom(name: Car) {
         stockCars.removeAll { $0.vin == name.vin }
         showroomCars.append(name)
         print("\(name.model) VIN code: \(name.vin) added to car dealership")
-        presaleService(name: name)
-    }
-    func sellCar(name: Car) {
-        showroomCars.removeAll { $0.vin == name.vin }
         if name.isServiced == false {
             presaleService(name: name)
         }
+    }
+    func sellCar(name: Car) {
+        for i in showroomCars.indices {
+            if showroomCars[i].isServiced == false {
+                presaleService(name: showroomCars[i])
+            }
+        }
+        showroomCars.removeAll { $0.vin == name.vin }
         if name.accessories.isEmpty {
             offerAccesories(nameOfAccessories: accessories)
         }
@@ -543,6 +664,7 @@ class PorscheAvilon: Dealership {
     }
     func orderCar() {
         stockCars.append(carsInTheWarehouseBmw1[Int.random(in: 0..<carsInTheWarehouseBmw1.count)])
+
     }
 }
 
