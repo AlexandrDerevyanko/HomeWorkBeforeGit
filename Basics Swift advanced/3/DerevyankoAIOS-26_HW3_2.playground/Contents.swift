@@ -50,225 +50,56 @@ protocol Dealership {
 
 //Часть 3
 //  Пункт 1
-struct Bmw1: Car {
-    var model: String = "BMW \(BmwList.Three)"
-    var color: Color = Color.white
-    var buildDate: String = "10 january 2020"
-    var price: Double = 80000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "B8899WE76548131"
-}
-var bmw1 = Bmw1()
 
-struct Bmw2: Car {
-    var model: String = "BMW \(BmwList.Seven)"
-    var color: Color = Color.blue
-    var buildDate: String = "12 january 2022"
-    var price: Double = 198000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = false
-    var vin: String = "B8899WE76548132"
+struct NewCar: Car {
+    var model: String
+    var color: Color
+    var buildDate: String
+    var price: Double
+    var accessories: [AccessoriesList]
+    var isServiced: Bool
+    var vin: String
 }
-var bmw2 = Bmw2()
 
-struct Bmw3: Car {
-    var model: String = "BMW \(BmwList.Three)"
-    var color: Color = Color.white
-    var buildDate: String = "10 january 2022"
-    var price: Double = 80000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "B8899WE76548133"
-}
-var bmw3 = Bmw3()
+var bmw1 = NewCar(model: "BMW \(BmwList.Three)", color: Color.white, buildDate: "10 january 2020", price: 80000, accessories: [], isServiced: true, vin: "B8899WE76548131")
 
-struct Bmw4: Car {
-    var model: String = "BMW \(BmwList.Seven)"
-    var color: Color = Color.blue
-    var buildDate: String = "12 january 2022"
-    var price: Double = 198000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = false
-    var vin: String = "B8899WE76548134"
-}
-var bmw4 = Bmw4()
+var bmw2 = NewCar(model: "BMW \(BmwList.Seven)", color: Color.blue, buildDate: "12 january 2022", price: 198000, accessories: [], isServiced: false, vin: "B8899WE76548132")
 
-struct Bmw5: Car {
-    var model: String = "BMW \(BmwList.Five)"
-    var color: Color = Color.blue
-    var buildDate: String = "12 december 2021"
-    var price: Double = 112000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = false
-    var vin: String = "B8899WE76548135"
-}
-var bmw5 = Bmw5()
+var bmw3 = NewCar(model: "BMW \(BmwList.Three)", color: Color.white, buildDate: "10 january 2022", price: 80000, accessories: [], isServiced: true, vin: "B8899WE76548133")
 
-struct Bmw6: Car {
-    var model: String = "BMW \(BmwList.Four)"
-    var color: Color = Color.yellow
-    var buildDate: String = "12 december 2021"
-    var price: Double = 106000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = false
-    var vin: String = "B8899WE76548136"
-}
-var bmw6 = Bmw6()
+var bmw4 = NewCar(model: "BMW \(BmwList.Seven)", color: Color.blue, buildDate: "12 january 2022", price: 198000, accessories: [], isServiced: false, vin: "B8899WE76548134")
 
-struct Bmw7: Car {
-    var model: String = "BMW \(BmwList.Four)"
-    var color: Color = Color.yellow
-    var buildDate: String = "12 december 2021"
-    var price: Double = 104000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "B8899WE76548137"
-}
-var bmw7 = Bmw7()
+var bmw5 = NewCar(model: "BMW \(BmwList.Five)", color: Color.blue, buildDate: "12 december 2021", price: 112000, accessories: [], isServiced: false, vin: "B8899WE76548135")
 
-struct Bmw8: Car {
-    var model: String = "BMW \(BmwList.Four)"
-    var color: Color = Color.yellow
-    var buildDate: String = "12 december 2021"
-    var price: Double = 110000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = false
-    var vin: String = "B8899WE76548138"
-}
-var bmw8 = Bmw8()
+var bmw6 = NewCar(model: "BMW \(BmwList.Four)", color: Color.yellow, buildDate: "12 december 2021", price: 106000, accessories: [], isServiced: false, vin: "B8899WE76548136")
 
-struct Audi1: Car {
-    var model: String = "Audi \(AudiList.A6)"
-    var color: Color = Color.black
-    var buildDate: String = "16 january 2022"
-    var price: Double = 120000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "A8899WE76548131"
-}
-var audi1 = Audi1()
+var bmw7 = NewCar(model: "BMW \(BmwList.Four)", color: Color.yellow, buildDate: "12 december 2021", price: 104000, accessories: [], isServiced: true, vin: "B8899WE76548137")
 
-struct Audi2: Car {
-    var model: String = "Audi \(AudiList.A8)"
-    var color: Color = Color.black
-    var buildDate: String = "20 january 2021"
-    var price: Double = 205000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "A8899WE76548132"
-}
-var audi2 = Audi2()
+var bmw8 = NewCar(model: "BMW \(BmwList.Four)", color: Color.yellow, buildDate: "12 december 2021", price: 110000, accessories: [], isServiced: false, vin: "B8899WE76548138")
 
-struct Audi3: Car {
-    var model: String = "Audi \(AudiList.A6)"
-    var color: Color = Color.black
-    var buildDate: String = "16 january 2022"
-    var price: Double = 120000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "A8899WE76548133"
-}
-var audi3 = Audi3()
+var audi1 = NewCar(model: "Audi \(AudiList.A6)", color: Color.black, buildDate: "16 january 2022", price: 120000, accessories: [], isServiced: true, vin: "A8899WE76548131")
 
-struct Audi4: Car {
-    var model: String = "Audi \(AudiList.A8)"
-    var color: Color = Color.black
-    var buildDate: String = "20 january 2022"
-    var price: Double = 205000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "A8899WE76548134"
-}
-var audi4 = Audi4()
+var audi2 = NewCar(model: "Audi \(AudiList.A8)", color: Color.black, buildDate: "20 january 2021", price: 205000, accessories: [], isServiced: true, vin: "A8899WE76548132")
 
-struct Audi5: Car {
-    var model: String = "Audi \(AudiList.A6)"
-    var color: Color = Color.black
-    var buildDate: String = "20 march 2021"
-    var price: Double = 123000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "A8899WE76548135"
-}
-var audi5 = Audi5()
+var audi3 = NewCar(model: "Audi \(AudiList.A6)", color: Color.black, buildDate: "16 january 2022", price: 120000, accessories: [], isServiced: true, vin: "A8899WE76548133")
 
-struct Audi6: Car {
-    var model: String = "Audi \(AudiList.A6)"
-    var color: Color = Color.black
-    var buildDate: String = "20 april 2021"
-    var price: Double = 123000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "A8899WE76548136"
-}
-var audi6 = Audi6()
+var audi4 = NewCar(model: "Audi \(AudiList.A8)", color: Color.black, buildDate: "20 january 2022", price: 205000, accessories: [], isServiced: true, vin: "A8899WE76548134")
 
-struct Audi7: Car {
-    var model: String = "Audi \(AudiList.A7)"
-    var color: Color = Color.black
-    var buildDate: String = "20 april 2021"
-    var price: Double = 129000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "A8899WE76548137"
-}
-var audi7 = Audi7()
+var audi5 = NewCar(model: "Audi \(AudiList.A6)", color: Color.black, buildDate: "20 march 2021", price: 123000, accessories: [], isServiced: true, vin: "A8899WE76548135")
 
-struct Audi8: Car {
-    var model: String = "Audi \(AudiList.A8)"
-    var color: Color = Color.black
-    var buildDate: String = "20 september 2021"
-    var price: Double = 205000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "A8899WE76548138"
-}
-var audi8 = Audi8()
+var audi6 = NewCar(model: "Audi \(AudiList.A6)", color: Color.black, buildDate: "20 april 2021", price: 123000, accessories: [], isServiced: true, vin: "A8899WE76548136")
 
-struct Porsche1: Car {
-    var model: String = "Porsche \(PorscheList.Taycan)"
-    var color: Color = Color.purple
-    var buildDate: String = "10 january 2022"
-    var price: Double = 223000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = false
-    var vin: String = "P8899WE76548131"
-}
-var porsche1 = Porsche1()
+var audi7 = NewCar(model: "Audi \(AudiList.A7)", color: Color.black, buildDate: "20 april 2021", price: 129000, accessories: [], isServiced: true, vin: "A8899WE76548137")
 
-struct Porsche2: Car {
-    var model: String = "Porsche \(PorscheList.Boxter)"
-    var color: Color = Color.red
-    var buildDate: String = "11 january 2022"
-    var price: Double = 98000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = false
-    var vin: String = "P8899WE76548132"
-}
-var porsche2 = Porsche2()
+var audi8 = NewCar(model: "Audi \(AudiList.A8)", color: Color.black, buildDate: "20 september 2021", price: 205000, accessories: [], isServiced: true, vin: "A8899WE76548138")
 
-struct Porsche3: Car {
-    var model: String = "Porsche \(PorscheList.Boxter)"
-    var color: Color = Color.red
-    var buildDate: String = "11 january 2022"
-    var price: Double = 98000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = true
-    var vin: String = "P8899WE76548133"
-}
-var porsche3 = Porsche3()
+var porsche1 = NewCar(model: "Porsche \(PorscheList.Taycan)", color: Color.purple, buildDate: "10 january 2022", price: 223000, accessories: [], isServiced: false, vin: "P8899WE76548131")
 
-struct Porsche4: Car {
-    var model: String = "Porsche \(PorscheList.Boxter)"
-    var color: Color = Color.red
-    var buildDate: String = "11 january 2021"
-    var price: Double = 98000
-    var accessories: [AccessoriesList] = []
-    var isServiced: Bool = false
-    var vin: String = "P8899WE76548134"
-}
-var porsche4 = Porsche4()
+var porsche2 = NewCar(model: "Porsche \(PorscheList.Boxter)", color: Color.red, buildDate: "11 january 2022", price: 98000, accessories: [], isServiced: false, vin: "P8899WE76548132")
+
+var porsche3 = NewCar(model: "Porsche \(PorscheList.Boxter)", color: Color.red, buildDate: "11 january 2022", price: 98000, accessories: [], isServiced: true, vin: "P8899WE76548133")
+
+var porsche4 = NewCar(model: "Porsche \(PorscheList.Boxter)", color: Color.red, buildDate: "11 january 2021", price: 98000, accessories: [], isServiced: false, vin: "P8899WE76548134")
 
 var carsInTheWarehouseBmw1: [Car] = [bmw5, bmw6, bmw7]
 var carsInTheWarehouseBmw2: [Car] = [bmw7, bmw8]
@@ -297,26 +128,21 @@ class BmwAutoHouse: Dealership {
         print("you can buy the following accessories\(nameOfAccessories)")
     }
     func presaleService(name: Car) {
-            for i in stockCars.indices {
-                if name.vin == stockCars[i].vin {
-                    stockCars[i].isServiced = true
-                }
-            }
+        if name.isServiced == false {
             for index in showroomCars.indices {
                 if name.vin == showroomCars[index].vin {
                     showroomCars[index].isServiced = true
                 }
             }
+        }
         print("Pre-sale preparation for the car \(name.model) VIN code: \(name.vin)")
     }
         
     func addToShowroom(name: Car) {
         stockCars.removeAll { $0.vin == name.vin }
         showroomCars.append(name)
+        presaleService(name: name)
         print("\(name.model) VIN code: \(name.vin) added to car dealership")
-        if name.isServiced == false {
-            presaleService(name: name)
-        }
     }
     func sellCar(name: Car) {
         for i in showroomCars.indices {
@@ -332,7 +158,7 @@ class BmwAutoHouse: Dealership {
     }
     func orderCar() {
         stockCars.append(carsInTheWarehouseBmw1[Int.random(in: 0..<carsInTheWarehouseBmw1.count)])
-
+        print("Car \(stockCars[stockCars.count - 1].model) VIN code: \(stockCars[stockCars.count - 1].vin) added to parking")
     }
 }
 
@@ -360,9 +186,27 @@ extension BmwAutoHouse: SpecialOffer {
                     
                 } else {
                     stockCars[index].price = stockCars[index].price * 0.85
+                    addToShowroom(name: stockCars[index])
                 }
             }
+        for i in showroomCars.indices {
+            if showroomCars[i].accessories.contains(.AidKit) {
+                
+            } else {
+                showroomCars[i].accessories.append(AccessoriesList.AidKit)
+                showroomCars[i].accessories.append(AccessoriesList.Extinguisher)
+            }
+        }
+        for index in stockCars.indices {
+            if stockCars[index].accessories.contains(.AidKit) {
+                
+            } else {
+                stockCars[index].accessories.append(AccessoriesList.AidKit)
+                stockCars[index].accessories.append(AccessoriesList.Extinguisher)
+            }
+        }
     }
+    
 }
 
 var bmwAutoHouse = BmwAutoHouse()
@@ -416,11 +260,7 @@ class BmwAvilon: Dealership {
         }
     }
     func sellCar(name: Car) {
-        for i in showroomCars.indices {
-            if showroomCars[i].isServiced == false {
-                presaleService(name: showroomCars[i])
-            }
-        }
+        presaleService(name: name)
         showroomCars.removeAll { $0.vin == name.vin }
         if name.accessories.isEmpty {
             offerAccesories(nameOfAccessories: accessories)
